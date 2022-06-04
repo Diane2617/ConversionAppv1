@@ -1,5 +1,5 @@
 import imp
-
+import random
 
 def f_to_c(f_temp):
   c_temp = (f_temp - 32) * 5/9
@@ -105,25 +105,29 @@ def conversion_function():
     print("Error: Letter not in list. Please enter a letter that corresponds with the conversion you wish.")
     conversion_function()
 
+#Message to ask user if that is all they would like
+def end_message_function():
+  is_all = input("Is this all you would like? Y for yes, N for a joke ").upper()
+  # Ending message
+  end_mesg = "Thanks for using Conversion!"
+  if is_all == "Y":
+    print(end_mesg)
+  elif is_all == "N":
+    print(random.choice(random_jokes))
+    print(end_mesg)
+  else:
+    print("Error: Letter not recognised")
+    end_message_function()
+
 
 #Ask user name
 name = input("Welcome to the Conversion. What is your name? ")
 
 conversion_function()
 
-import random
+end_message_function()
 
-#Message to ask user if that is all they would like
-is_all = input("Is this all you would like? Y for yes, N for a joke ").upper()
 
-# Ending message
-end_mesg = "Thanks for using Conversion!"
 
-if is_all == "Y":
-  print(end_mesg)
-elif is_all == "N":
-  print(random.choice(random_jokes))
-  print(end_mesg)
-else:
-  print("Error: Letter not recognised")
-  print(is_all)
+
+
