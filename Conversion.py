@@ -54,6 +54,20 @@ def sqft_to_metresq(sqft):
 random_jokes = ["I'm not cold, just chilli", "Why was the math teacher suspicious of all the prime numbers? Because they were all odd.", "How does a mathematician plow a field? He uses a pro-tractor."]
 
 def conversion_function():
+   # Ask user to select what type of conversion would like to
+  #have done
+  conversion_selection = input(f""" 
+  Hi {name}. Type in the letter that corresponds with
+  the conversion you would like to do?
+  A - Fahrenheit to celcius
+  B - Celcius to fahrenheit
+  c - Cups to tablespoons
+  D - Tablespoons to cups
+  E - Pounds to kilograms
+  F - Kilograms to pounds
+  G - Metre squared to square foot
+  H - Square foot to metre squared
+  """ ).upper()
 
   if conversion_selection == "A":
     conver_input = int(input("Please input the value to be converted." ))
@@ -89,26 +103,11 @@ def conversion_function():
     print(f"{conver_input} is equivalent to {conversion} in metre squared.")
   else:
     print("Error: Letter not in list. Please enter a letter that corresponds with the conversion you wish.")
-    print(conversion_selection)
+    conversion_function()
 
 
 #Ask user name
 name = input("Welcome to the Conversion. What is your name? ")
-
-# Ask user to select what type of conversion would like to
-#have done
-conversion_selection = input(f""" 
-Hi {name}. Type in the letter that corresponds with
-the conversion you would like to do?
-A - Fahrenheit to celcius
-B - Celcius to fahrenheit
-c - Cups to tablespoons
-D - Tablespoons to cups
-E - Pounds to kilograms
-F - Kilograms to pounds
-G - Metre squared to square foot
-H - Square foot to metre squared
-""" ).upper()
 
 conversion_function()
 
