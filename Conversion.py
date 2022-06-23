@@ -1,53 +1,55 @@
 import imp
 import random
 
-def f_to_c(f_temp):
-  c_temp = (f_temp - 32) * 5/9
-  return c_temp
+if __name__=="__main__":
 
-#f100_in_celsius = f_to_c(100)
+  def f_to_c(f_temp):
+    c_temp = (f_temp - 32) * 5/9
+    return c_temp
 
-def c_to_f(c_temp):
-  f_temp = c_temp * (9/5) + 32
-  return f_temp
+  #f100_in_celsius = f_to_c(100)
 
-#c0_in_fahrenheit = c_to_f(0)
+  def c_to_f(c_temp):
+    f_temp = c_temp * (9/5) + 32
+    return f_temp
 
-#Function for converting cups to tablespoons
+  #c0_in_fahrenheit = c_to_f(0)
 
-def cup_to_tbsp(cup):
-  tbsp = cup * 16
-  return tbsp
+  #Function for converting cups to tablespoons
 
-# Function for converting tablespoons to cups
+  def cup_to_tbsp(cup):
+    tbsp = cup * 16
+    return tbsp
 
-def tbsp_to_cups(tbsp):
-  cup = tbsp / 16
-  return cup
+  # Function for converting tablespoons to cups
 
-# Convert lbs to kg
+  def tbsp_to_cups(tbsp):
+    cup = tbsp / 16
+    return cup
 
-def lbs_to_kg(lbs):
-  kilogram = lbs / 2.205
-  return kilogram
+  # Convert lbs to kg
 
-# Convert kg to lbs
+  def lbs_to_kg(lbs):
+    kilogram = lbs / 2.205
+    return kilogram
 
-def kg_to_lbs(kg):
-  pounds = kg * 2.205
-  return pounds
+  # Convert kg to lbs
 
-# Convert metre squared to square foot
+  def kg_to_lbs(kg):
+    pounds = kg * 2.205
+    return pounds
 
-def metresq_to_sqft(mtre):
-  sqft = mtre * 10.764
-  return sqft
+  # Convert metre squared to square foot
 
-# Convert square foot to metre squared
+  def metresq_to_sqft(mtre):
+    sqft = mtre * 10.764
+    return sqft
 
-def sqft_to_metresq(sqft):
-  metresq = sqft / 10.764
-  return metresq
+  # Convert square foot to metre squared
+
+  def sqft_to_metresq(sqft):
+    metresq = sqft / 10.764
+    return metresq
 
 # Random Jokes
 
