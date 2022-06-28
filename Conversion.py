@@ -4,105 +4,85 @@ import random
 if __name__=="__main__":
 
   def f_to_c(f_temp):
-    c_temp = (f_temp - 32) * 5/9
-    return c_temp
+    c_temp = round((f_temp - 32) * 5/9, 2)
+    print(f"{f_temp} is equivalent to {c_temp} in celcius.")
 
   #f100_in_celsius = f_to_c(100)
 
   def c_to_f(c_temp):
-    f_temp = c_temp * (9/5) + 32
-    return f_temp
-
-  #c0_in_fahrenheit = c_to_f(0)
+    f_temp = round(c_temp * (9/5) + 32, 2)
+    print(f"{c_temp} is equivalent to {f_temp} in fahrenheit")
 
   #Function for converting cups to tablespoons
 
   def cup_to_tbsp(cup):
     tbsp = cup * 16
-    return tbsp
+    print(f"{cup} is equivalent to {tbsp} in tablespoons.")
 
   # Function for converting tablespoons to cups
 
   def tbsp_to_cups(tbsp):
     cup = tbsp / 16
-    return cup
+    print(f"{tbsp} is equivalent to {cup} in cups.")
 
   # Convert lbs to kg
 
   def lbs_to_kg(lbs):
-    kilogram = lbs / 2.205
-    return kilogram
+    kilogram = round(lbs / 2.205, 2)
+    print(f"{lbs} is equivalent to {kilogram} in kilograms.") 
 
   # Convert kg to lbs
 
   def kg_to_lbs(kg):
-    pounds = kg * 2.205
-    return pounds
+    pounds = round(kg * 2.205, 2)
+    print(f"{kg} is equivalent to {pounds} in pounds.")
 
   # Convert metre squared to square foot
 
   def metresq_to_sqft(mtre):
     sqft = mtre * 10.764
-    return sqft
+    print(f"{mtre} is equivalent to {sqft} in sq ft.")
 
   # Convert square foot to metre squared
 
   def sqft_to_metresq(sqft):
     metresq = sqft / 10.764
-    return metresq
+    print(f"{sqft} is equivalent to {metresq} in metre squared.")
 
 # Random Jokes
 
 random_jokes = ["I'm not cold, just chilli", "Why was the math teacher suspicious of all the prime numbers? Because they were all odd.", "How does a mathematician plow a field? He uses a pro-tractor."]
+
+conversion_selections = {"A": "Fahrenheit to celcius", "B": "Celcius to fahrenheit", "C": "Cups to tablespoons", "D" : "Tablespoons to cups",
+  "E": "Pounds to kilograms", "F": "Kilograms to pounds", "G": "Metre squared to square foot", "H":"Square foot to metre squared"}
 
 def conversion_function():
    # Ask user to select what type of conversion would like to
   #have done
   conversion_selection = input(f""" 
   Hi {name}. Type in the letter that corresponds with
-  the conversion you would like to do?
-  A - Fahrenheit to celcius
-  B - Celcius to fahrenheit
-  c - Cups to tablespoons
-  D - Tablespoons to cups
-  E - Pounds to kilograms
-  F - Kilograms to pounds
-  G - Metre squared to square foot
-  H - Square foot to metre squared
-  """ ).upper()
+  the conversion you would like to do? {conversion_selections.items()}""" ).upper()
+
+# Message requesting value to be converted
+
+  conver_value = int(input("Please input the value to be converted" ))
 
   if conversion_selection == "A":
-    conver_input = int(input("Please input the value to be converted." ))
-    conversion = round(f_to_c(conver_input), 2)
-    print(f"{conver_input} is equivalent to {conversion} in celcius.")
+    f_to_c(conver_value)
   elif conversion_selection == "B":
-    conver_input = int(input("Please input the value to be converted." ))
-    conversion = round(c_to_f(conver_input), 2)
-    print(f"{conver_input} is equivalent to {conversion} in fahrenheit.")
+    c_to_f(conver_value) 
   elif conversion_selection == "C":
-    conver_input = int(input("Please input the value to be converted." ))
-    conversion = round(cup_to_tbsp(conver_input))
-    print(f"{conver_input} is equivalent to {conversion} in tablespoons.")
+    cup_to_tbsp(conver_value)
   elif conversion_selection == "D":
-    conver_input = int(input("Please input the value to be converted." ))
-    conversion = round(tbsp_to_cups(conver_input))
-    print(f"{conver_input} is equivalent to {conversion} in cups.")
+    tbsp_to_cups(conver_value)
   elif conversion_selection == "E":
-    conver_input = int(input("Please input the value to be converted." ))
-    conversion = round(lbs_to_kg(conver_input), 2)
-    print(f"{conver_input} is equivalent to {conversion} in kilograms.")
+    lbs_to_kg(conver_value)
   elif conversion_selection == "F":
-    conver_input = int(input("Please input the value to be converted." ))
-    conversion = round(kg_to_lbs(conver_input), 2)
-    print(f"{conver_input} is equivalent to {conversion} in pounds.")
+    kg_to_lbs(conver_value)
   elif conversion_selection == "G":
-    conver_input = int(input("Please input the value to be converted." ))
-    conversion = round(metresq_to_sqft(conver_input), 2)
-    print(f"{conver_input} is equivalent to {conversion} in sq ft.")
+    metresq_to_sqft(conver_value)
   elif conversion_selection == "H":
-    conver_input = int(input("Please input the value to be converted." ))
-    conversion = round(sqft_to_metresq(conver_input), 2)
-    print(f"{conver_input} is equivalent to {conversion} in metre squared.")
+    sqft_to_metresq(conver_value)
   else:
     print("Error: Letter not in list. Please enter a letter that corresponds with the conversion you wish.")
     conversion_function()
